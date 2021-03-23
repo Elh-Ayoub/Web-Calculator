@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Calculator</title>
+        <meta charset="utf-8">
+        <meta name="description" content="race00. Calculator">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="cont">
+        <div class="container">
+            <h1 id="title">Calculator</h1>
+            <div id="in-output">
+                <p id="output">0</p>
+                <p id="input">0</p>
+            </div>
+            <table id="table">
+                <tbody>
+                    <tr>
+                        <td onclick="displaySavedValue()">MR</td>
+                        <td onclick="cleaVALUE()">MC</td>
+                        <td onclick="displaySavedValueSumResult(1)">M+</td>
+                        <td onclick="displaySavedValueSumResult(-1)">M-</td>
+                    </tr>
+                    <tr>
+                        <td onclick="Clean()">C</td>
+                        <td onclick="changeSign()">&#43;&#47;&#45;</td>
+                        <td onclick="writeToInput('%')" class="operator">&#37;</td>
+                        <td onclick="writeToInput('√')">&radic;</td>
+                    </tr>
+                    <tr>
+                        <td onclick="writeToInput('(')">&#40;</td>
+                        <td onclick="writeToInput(')')">&#41;</td>
+                        <td onclick="writeToInput('^')">&#94;</td>
+                        <td onclick="writeToInput('/')" class="operator">&#47;</td>
+                    </tr>
+                    <tr>
+                        <td onclick="writeToInput(7)" class="number">7</td>
+                        <td onclick="writeToInput(8)" class="number">8</td>
+                        <td onclick="writeToInput(9)" class="number">9</td>
+                        <td onclick="writeToInput('*')" class="operator">&#42;</td>
+                    </tr>
+                    <tr>
+                        <td onclick="writeToInput(4)" class="number">4</td>
+                        <td onclick="writeToInput(5)" class="number">5</td>
+                        <td onclick="writeToInput(6)" class="number">6</td>
+                        <td onclick="writeToInput('+')" class="operator">&#43;</td>
+                    </tr>
+                    <tr>
+                        <td onclick="writeToInput(1)" class="number">1</td>
+                        <td onclick="writeToInput(2)" class="number">2</td>
+                        <td onclick="writeToInput(3)" class="number">3</td>
+                        <td onclick="writeToInput('-')" class="operator">&#45;</td>
+                    </tr>
+                    <tr>
+                        <td onclick="writeToInput('.')" id="point">&#46;</td>
+                        <td onclick="writeToInput(0)" class="number">0</td>
+                        <td onclick="calculate()" id="equal">&#61;</td>
+                        <td onclick="writeToInput('!')" class="operator">!</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- convert lenght -->
+            <div id="length">
+                <div class="length_div">
+                    <label>Feet</label>
+                    <input id="inputFeet"  type="number" placeholder="Feet" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+                </div>
+                <div class="length_div">
+                    <label>Meters</label>
+                    <input id="inputMeters"  type="number" placeholder="Meters" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+                </div>
+                <div class="length_div">
+                    <label>cm</label>
+                    <input id="inputcm"  type="number" placeholder="cm" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+                </div>
+                <div class="length_div">
+                    <label>Yards</label>
+                    <input id="inputYards"  type="number" placeholder="Yards" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+                </div>
+                <div class="length_div">
+                    <label>Kilometers</label>
+                    <input id="inputKilometers"  type="number" placeholder="Kilometers" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+                </div>
+                <div class="length_div">
+                    <label>Miles</label>
+                    <input id="inputMiles"  type="number" placeholder="Miles" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+                </div>
+            </div>
+            <!-- -------------- -->
+            <!-- convert weights -->
+            <div class="weight" id="myDIV">
+                <div class="weight_div">
+                    <label>Once</label>
+                    <input id="inputOnce"  type="number" placeholder="Once" oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+                </div>
+                <div class="weight_div">
+                    <label>Kilogram</label>
+                    <input id="inputKilogram"  type="number" placeholder="Kilogram" oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+                </div>
+                <div class="weight_div">
+                    <label>Pound</label>
+                    <input id="inputPound"  type="number" placeholder="Pound" oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+                </div>
+                <div class="weight_div">
+                    <label>Gram</label>
+                    <input id="inputGram"  type="number" placeholder="Gram" oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+                </div>
+                <div class="weight_div">
+                    <label>Tonne</label>
+                    <input id="inputTonne"  type="number" placeholder="Tonne" oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+                </div>
+                <div class="weight_div">
+                    <label>Stone</label>
+                    <input id="inputStone"  type="number" placeholder="Stone" oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+                </div>
+            </div>
+             <!---Area Converter -->
+             <div id="square">
+                <div class="square_div">
+                    <label>mm <sup>2</sup></label>
+                    <input id="inputMillimeter"  type="number" placeholder="Millimeter^2" oninput="squareConverter(this.id,this.value)" onchange="squareConverter(this.id,this.value)">
+                </div>
+                <div class="square_div">
+                    <label>cm <sup>2</sup></label>
+                    <input id="inputCentimeter"  type="number" placeholder="Centimeter^2" oninput="squareConverter(this.id,this.value)" onchange="squareConverter(this.id,this.value)">
+                </div>
+                <div class="square_div">
+                    <label>m <sup>2</sup></label>
+                    <input id="inputMeter"  type="number" placeholder="Meter^2" oninput="squareConverter(this.id,this.value)" onchange="squareConverter(this.id,this.value)">
+                </div>
+                <div class="square_div">
+                    <label>km <sup>2</sup></label>
+                    <input id="inputKilometer"  type="number" placeholder="Kilometer^2" oninput="squareConverter(this.id,this.value)" onchange="squareConverter(this.id,this.value)">
+                </div>
+                <div class="square_div">
+                    <label>yd <sup>2</sup></label>
+                    <input id="inputYard"  type="number" placeholder="Yard^2" oninput="squareConverter(this.id,this.value)" onchange="squareConverter(this.id,this.value)">
+                </div>
+                <div class="square_div">
+                    <label>ft <sup>2</sup></label>
+                    <input id="inputFeet2"  type="number" placeholder="Feet^2" oninput="squareConverter(this.id,this.value)" onchange="squareConverter(this.id,this.value)">
+                </div>
+             </div>
+            <!-- -------------- -->
+            <!--Numerical convert-->
+            <div id="numerical">
+                <div class="binary">
+                    <label>Binary</label>
+                    <input id="inputBinary"  type="text" oninput="Base_converter(this.id,this.value)" onchange="Base_converter(this.id,this.value)">
+                </div>
+                <div class="decimal">
+                    <label>Decimal</label>
+                    <input id="inputDecimal"  type="text" oninput="Base_converter(this.id,this.value)" onchange="Base_converter(this.id,this.value)">
+                </div>
+                <div class="hexadicimal">
+                    <label>Hexadicimal</label>
+                    <input id="inputHexadicimal"  type="text" oninput="Base_converter(this.id,this.value)" onchange="Base_converter(this.id,this.value)">
+                </div>
+             </div>
+            <!-- -------------- -->
+        </div>
+        <div class="btns">
+            <input id="Calculator" onclick="forCalculator()" type="submit" value="Calculator"></input>
+            <input id = "Length" type="submit" onclick="forLenght()" value="Length"></input>
+            <input id = "Weights" type="submit" onclick="forweight()" value="Weights"></input>
+            <input id = "Area" type="submit" onclick="forArea()" value="Area"></input>
+            <input id = "Numerical" type="submit" onclick="forNumerical()" value="Numerical"></input>
+        </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>

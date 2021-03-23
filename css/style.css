@@ -1,0 +1,119 @@
+.cont{
+    margin: auto;
+    display: flex;
+    width: fit-content;
+}
+.container{
+    width: fit-content;
+    margin: auto;
+    background: #4080bf;
+    text-align: center;
+    flex-wrap: wrap;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 40px solid #4080bf;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+#title{
+    color: white;
+    background-color: #4080bf;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 15px;
+}
+#in-output{
+    border: 1px solid gray;
+    height: 200px;
+    padding: 5px;
+    background: white;
+}
+#input{
+    font-size: 70px;
+    color: #79a6d2;
+    text-align: right;
+    width: 14.5ch; /* 11.5ch;( */
+    overflow-x: scroll;
+    white-space: nowrap;
+    /*text-overflow: ellipsis;*/
+}
+#output{
+    font-size: 30px;
+    color: gray;
+    text-align: right;
+    margin: -5px;
+    padding: 10px;
+}
+table{
+    width: fit-content;
+    border-collapse: collapse;
+    background-color: #4080bf;
+    text-shadow: 2px 2px gray;
+}
+td{
+    padding: 20px 40px;
+    background: linear-gradient(45deg, #4080bf, #79a6d2);
+    border: 2px solid #2d882d70;
+    cursor: pointer;
+    font-size: 25px;
+}
+.number{
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    color: white;
+}
+#equal{
+    background: #c6d9ec;
+}
+td:hover, #equal:hover{
+    background: #9fbfdf;
+    text-shadow: 2px 2px #E0F97D;
+}
+.btns{
+    flex-direction: column;
+    display: flex;
+    margin: auto;
+}
+.btns input{
+    margin: 60px 0px;
+    padding: 20px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 2px solid #2d882d70;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    background: linear-gradient(45deg, #4080bf, #79a6d2);
+    font-size: 20px;
+}
+#length{
+    display: none;
+    margin: 25px;
+    height: 700px;
+}
+#length div, .weight div, #square div, #numerical div{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 25px;
+}
+label{
+    font-size: 25px;
+    color: wheat;
+}
+#length input, .weight input, #square input, #numerical input{
+    width: 30em;
+    height: 2em;
+}
+.weight{
+    display: none;
+    margin: 25px;
+    height: 700px;
+}
+#square{
+    display: none;
+    margin: 25px;
+    height: 700px;
+}
+#numerical{
+    display: none;
+    height: 700px;
+}
